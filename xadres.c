@@ -1,41 +1,45 @@
 #include <stdio.h>
 
+void torre(int casaTorre){
+    if (casaTorre > 0)
+    {
+        printf("Direita\n");
+        torre(casaTorre - 1);
+    }
+}
+
+void bispo(int casaBispo){
+    if (casaBispo > 0)
+    {
+        printf("Cima, Direira\n");
+        bispo(casaBispo - 1);
+    }
+    
+}
+
+    void rainha(int casarainha){
+        if (casarainha > 0)
+        {
+          printf("Esquerda\n");
+          rainha(casarainha - 1);  
+        }
+        
+    }
+
 int main (){
-
-    int torre = 0;
-    int bispo = 0;
-    int rainha = 0;
+    
     int movimentoCavalo = 1;
-
     
     printf("Movimento Torre\n");//imprime aviso movimento torre
-    //estrutura for - move a torre 5 vezes para a direita
-    for (torre = 0; torre < 5; torre++)
-    {
-        printf("Direita\n"); //imprime o movimento
-    }
-
+    torre(5);
     printf("\n");
+
     printf("Movimento Bispo...\n"); //imprime aviso movimento torre
-
-    //estrutura while - move o bispo 5 vezes para a diagonal, representado pro "Cima, Direita"
-    while (bispo < 5)
-    {
-        printf("Cima, Direira\n"); //imprime aviso movimento bispo
-        
-        bispo++;
-    }
-
+    bispo(5);
     printf("\n");
-    printf("Movimento Rainha...\n"); //estrutura do while - move a torre 5 vezes para a direita
-    
-    //estrutura do while - move a Rainha 8 vezes para a esquerda
-    do
-    {
-        printf("Esquerda\n"); //imprime aviso movimento rainha
-        rainha++;
-    } while (rainha < 8);
-    
+
+    printf("Movimento Rainha...\n"); //estrutura - move a torre 5 vezes para a direita
+    rainha(8);
     printf("\n");
 
     printf("Movimento Cavalo...\n"); //estrutura de repetição aninhada - move o cavalo em L
@@ -43,10 +47,10 @@ int main (){
     {
         for (int i = 1; i <= 2; i++) //estrutura for
         {
-            printf("Baixo\n");
+            printf("Cima\n");
         }
 
-        printf("Esquerda");
+        printf("Direita");
         
         movimentoCavalo--;
     }
