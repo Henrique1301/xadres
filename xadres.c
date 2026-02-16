@@ -5,6 +5,7 @@ int main (){
     int torre = 0;
     int bispo = 0;
     int rainha = 0;
+    int movimentoCavalo = 1;
 
     
     printf("Movimento Torre\n");//imprime aviso movimento torre
@@ -26,7 +27,7 @@ int main (){
     }
 
     printf("\n");
-    printf("Movimento Rainha...\n"); //estrutura for - move a torre 5 vezes para a direita
+    printf("Movimento Rainha...\n"); //estrutura do while - move a torre 5 vezes para a direita
     
     //estrutura do while - move a Rainha 8 vezes para a esquerda
     do
@@ -35,7 +36,20 @@ int main (){
         rainha++;
     } while (rainha < 8);
     
-    
+    printf("\n");
+
+    printf("Movimento Cavalo...\n"); //estrutura de repetição aninhada - move o cavalo em L
+    while (movimentoCavalo == 1) //estrura while 
+    {
+        for (int i = 1; i <= 2; i++) //estrutura for
+        {
+            printf("Baixo\n");
+        }
+
+        printf("Esquerda");
+        
+        movimentoCavalo--;
+    }
 
     return 0;
 }
